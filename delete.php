@@ -10,7 +10,7 @@ $pdo = db_conn();
 
 
 // 3.SQL（データ削除）
-$stmt = $pdo->prepare('DELETE FROM targetSchool_table 
+$stmt = $pdo->prepare('DELETE FROM targetschool_table 
     WHERE 
         id = :id
     '

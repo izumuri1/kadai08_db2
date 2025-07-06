@@ -12,7 +12,7 @@ $pdo = db_conn();
 
 // 3.SQL（データ表示）
 // SELECTする時にidを指定する
-$stmt = $pdo->prepare('SELECT * FROM targetSchool_table WHERE id = :id;');
+$stmt = $pdo->prepare('SELECT * FROM targetschool_table WHERE id = :id;');
 $stmt -> bindValue(':id', $id, PDO::PARAM_INT);
 $status = $stmt->execute();
 
@@ -49,18 +49,18 @@ if ($status === false) {
           <h3>1.受験日時</h3>
           <div class="form-row">
             <label for="examStartTime">受験：開始日時</label>
-            <input type="datetime-local" name="examStartTime" id="examStartTime" value="<?= $result['examStartTime'] ?>" />
+            <input type="datetime-local" name="examStartTime" id="examStartTime" value="<?= h($result['examStartTime']) ?>" />
           </div>
 
           <div class="form-row">
             <label for="examEndTime">受験：終了日時</label>
-            <input type="datetime-local" name="examEndTime" id="examEndTime" value="<?= $result['examEndTime'] ?>" />
+            <input type="datetime-local" name="examEndTime" id="examEndTime" value="<?= h($result['examEndTime']) ?>" />
           </div>
 
           <h3>2.学校情報</h3>
           <div class="form-row">
             <label for="schoolName">学校名</label>
-            <input type="text" name="schoolName" id="schoolName" value="<?= $result['schoolName'] ?>" />
+            <input type="text" name="schoolName" id="schoolName" value="<?= h($result['schoolName']) ?>" />
           </div>
 
           <div class="form-row">
@@ -75,17 +75,17 @@ if ($status === false) {
 
           <div class="form-row">
             <label for="hensa">偏差値</label>
-            <input type="number" name="hensa" id="hensa" value="<?= $result['hensa'] ?>" />
+            <input type="number" name="hensa" id="hensa" value="<?= h($result['hensa']) ?>" />
           </div>
 
           <div class="form-row">
             <label for="station">最寄駅</label>
-            <input type="text" name="station" id="station" value="<?= $result['station'] ?>" />
+            <input type="text" name="station" id="station" value="<?= h($result['station']) ?>" />
           </div>
 
           <div class="form-row">
             <label for="walk">最寄駅から徒歩〇分</label>
-            <input type="number" name="walk" id="walk" value="<?= $result['walk'] ?>" />
+            <input type="number" name="walk" id="walk" value="<?= h($result['walk']) ?>" />
           </div>
 
           <h3>3.子供の気持ち</h3>
@@ -103,32 +103,32 @@ if ($status === false) {
 
           <div class="form-row">
             <label for="favorite">お気に入りポイント</label>
-            <input type="text" name="favorite" id="favorite" value="<?= $result['favorite'] ?>" />
+            <input type="text" name="favorite" id="favorite" value="<?= h($result['favorite']) ?>" />
           </div>
 
           <h3>4.親の頑張り</h3>
           <div class="form-row">
             <label for="application">願書：締切日時</label>
-            <input type="datetime-local" name="application" id="application" value="<?= $result['application'] ?>" />
+            <input type="datetime-local" name="application" id="application" value="<?= h($result['application']) ?>" />
           </div>
           
           <div class="form-row">
             <label for="applicationFee">受験料</label>
-            <input type="number" name="applicationFee" id="applicationFee" value="<?= $result['applicationFee'] ?>" />
+            <input type="number" name="applicationFee" id="applicationFee" value="<?= h($result['applicationFee']) ?>" />
           </div>
 
           <div class="form-row">
             <label for="entrance">入学金：締切日時</label>
-            <input type="datetime-local" name="entrance" id="entrance" value="<?= $result['entrance'] ?>" />
+            <input type="datetime-local" name="entrance" id="entrance" value="<?= h($result['entrance']) ?>" />
           </div>
 
           <div class="form-row">
             <label for="entranceFee">入学金</label>
-            <input type="number" name="entranceFee" id="entranceFee" value="<?= $result['entranceFee'] ?>" />
+            <input type="number" name="entranceFee" id="entranceFee" value="<?= h($result['entranceFee']) ?>" />
           </div>
 
             <!-- ★★★★★重要！！ここでidを表示しないと、idの値をPOSTできない -->
-            <input type="hidden" name="id" value="<?= $result['id'] ?>" />
+            <input type="hidden" name="id" value="<?= h($result['id']) ?>" />
 
           <div class="form-row">
             <label for=""></label>

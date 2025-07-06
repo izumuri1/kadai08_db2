@@ -23,7 +23,7 @@ $id = $_POST['id'];
 $pdo = db_conn();
 
 // 3.SQL（データ更新）
-$stmt = $pdo -> prepare('UPDATE targetSchool_table
+$stmt = $pdo -> prepare('UPDATE targetschool_table
     SET
         examStartTime = :examStartTime,
         examEndTime = :examEndTime,
@@ -38,8 +38,6 @@ $stmt = $pdo -> prepare('UPDATE targetSchool_table
         applicationFee = :applicationFee,
         entrance = :entrance,
         entranceFee = :entranceFee,
-        -- ★★★★★重要！！idも忘れない
-        id = :id
     WHERE id = :id
     ');
 

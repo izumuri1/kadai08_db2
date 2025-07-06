@@ -10,7 +10,7 @@ $pdo = db_conn();
 // 2.SQL（データ選択）
 // SELECT文の中で受験日時で昇順並び替え
 $stmt = $pdo -> prepare('
-    SELECT * FROM targetSchool_table ORDER BY interest DESC
+    SELECT * FROM targetschool_table ORDER BY interest DESC
     ');
 $status = $stmt->execute();
 

@@ -1,4 +1,7 @@
 <?php
+// funcs.phpの先頭に追加してエラーを表示
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 
 /////////////////////////////////////////////
 // DB接続
@@ -7,10 +10,10 @@ function db_conn(){
     // configを呼び出すおまじない
 
     // ★本番用：絶対パス表示
-    // $config = require('/home/izumuri/.php.config/db_config.php');
+    $config = require('/home/izumuri/.php.config/db_config.php');
 
     // ★ローカルホスト用：相対パス表示
-    $config = require(__DIR__ . '/config/db_config.php');
+    // $config = require(__DIR__ . '/config/db_config.php');
     
     try {$pdo = new PDO(
             "mysql:dbname={$config['db']}; charset={$config['charset']}; host={$config['host']}",

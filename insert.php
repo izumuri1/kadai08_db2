@@ -23,7 +23,7 @@ $pdo = db_conn();
 
 // 3.SQL（データ登録）
 $stmt = $pdo -> prepare('
-    INSERT INTO targetSchool_table
+    INSERT INTO targetschool_table
         (examStartTime, examEndTime, schoolName, subject, hensa, station, walk, interest, 
         favorite, application, applicationFee, entrance, entranceFee) 
     VALUES
